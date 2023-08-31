@@ -1,14 +1,11 @@
 package jpabook.jpashop.service;
 
-import jakarta.persistence.EntityManager;
 import jpabook.jpashop.domain.Address;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.*;
@@ -23,7 +20,7 @@ class MemberServiceTest {
     //@Autowired EntityManager em; //insert 쿼리문을 꼭 봐야한다면 em을 사용해서 flush 이용
 
     @Test
-    //@Rollback(false) //롤백안하기 때문에 db에 접근함 -> insert 쿼리문 생성
+    //@Rollback(false) //롤백 안하기 때문에 db에 접근함 -> insert 쿼리문 생성
     public void 회원가입() throws Exception{
         //given
         Member member = new Member();
