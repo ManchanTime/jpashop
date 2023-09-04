@@ -18,6 +18,7 @@ public class ItemRepository {
             em.persist(item);
         }
         else{
+            //merge 방식 -> 모든 필드를 교체한다 -> 변경 값을 넣어주지 않으면 null로 넣어버린다 -> 문제 발생 가능성 많다
             em.merge(item);
         }
     }
